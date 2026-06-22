@@ -2,13 +2,15 @@
 
 int main()
 {
-    char op, ch;
+    char op, ch1, ch2;
+    long bill =0;
+
+    printf("\n<------ Welcome to Kolhapuri Tadka ------>\n");
+    printf("<--- Test the Fire of Kolhapur --->\n");
 
     do
     {
-        printf("\n<------ Welcome to Kolhapuri Tadka ------>\n");
-        printf("<--- Test the Fire of Kolhapur --->\n");
-        printf("Please select what you want -->\n");
+        printf("\nPlease select what you want -->\n");
         printf("1. Starter\n");
         printf("2. Main Course\n");
         printf("3. Dessert\n");
@@ -21,97 +23,201 @@ int main()
         {
         case '1':
             printf("\n--- Starter Menu ---\n");
-            printf("1. Chicken 65      - Rs.250\n");
-            printf("2. Chicken Kebab   - Rs.300\n");
-            printf("3. Paneer Pakoda   - Rs.350\n");
-            printf("4. Exit\n");
 
-            printf("Enter your choice: ");
-            scanf(" %c", &ch);
-
-            switch (ch)
+            do
             {
-            case '1':
-                printf("Ordered: Chicken 65 (Rs.250)\n");
-                break;
+                printf("\n1. Veg\n");
+                printf("2. Non-Veg\n");
+                printf("3. Exit\n");
+                printf("Please select your choice: ");
+                scanf(" %c", &ch1);
 
-            case '2':
-                printf("Ordered: Chicken Kebab (Rs.300)\n");
-                break;
+                switch (ch1)
+                {
+                case '1':
+                    printf("\nVeg Starters\n");
+                    printf("1. Paneer Tikka    -Rs.200\n");
+                    printf("2. Veg Pakora      -Rs.120\n");
+                    printf("3. Paneer 65       -Rs.150\n");
 
-            case '3':
-                printf("Ordered: Paneer Pakoda (Rs.350)\n");
-                break;
+                    printf("Please select what you want: ");
+                    scanf(" %c", &ch2);
 
-            case '4':
-                printf("Returning to Main Menu...\n");
-                break;
+                    switch (ch2)
+                    {
+                    case '1':
+                        printf("Ordered: Paneer Tikka (Rs.200)\n");
+                        bill += 200;
+                        break;
 
-            default:
-                printf("Invalid Choice!\n");
-            }
+                    case '2':
+                        printf("Ordered: Veg Pakora (Rs.120)\n");
+                        bill += 120;
+                        break;
+
+                    case '3':
+                        printf("Ordered: Paneer 65 (Rs.150)\n");
+                        bill += 150;
+                        break;
+
+                    default:
+                        printf("Invalid Choice\n");
+                    }
+                    break;
+
+                case '2':
+                    printf("\nNon-Veg Starters\n");
+                    printf("1. Chicken 65        -Rs.150\n");
+                    printf("2. Chicken Wings     -Rs.200\n");
+                    printf("3. Chicken Chilli    -Rs.230\n");
+
+                    printf("Please select what you want: ");
+                    scanf(" %c", &ch2);
+
+                    switch (ch2)
+                    {
+                    case '1':
+                        printf("Ordered: Chicken 65 (Rs.150)\n");
+                        bill += 150;
+                        break;
+
+                    case '2':
+                        printf("Ordered: Chicken Wings (Rs.200)\n");
+                        bill += 200;
+                        break;
+
+                    case '3':
+                        printf("Ordered: Chicken Chilli (Rs.230)\n");
+                        bill += 230;
+                        break;
+
+                    default:
+                        printf("Invalid Choice\n");
+                    }
+                    break;
+
+                case '3':
+                    printf("Exit from Starter Menu\n");
+                    break;
+
+                default:
+                    printf("Invalid Choice\n");
+                }
+
+            } while (ch1 != '3');
             break;
 
         case '2':
             printf("\n--- Main Course Menu ---\n");
-            printf("1. Chicken Pahadi          - Rs.350\n");
-            printf("2. Chicken Murg Musallam   - Rs.450\n");
-            printf("3. Paneer Tadka            - Rs.400\n");
-            printf("4. Veg Mix                 - Rs.500\n");
-            printf("5. Exit\n");
 
-            printf("Enter your choice: ");
-            scanf(" %c", &ch);
-
-            switch (ch)
+            do
             {
-            case '1':
-                printf("Ordered: Chicken Pahadi (Rs.350)\n");
-                break;
+                printf("\n1. Veg\n");
+                printf("2. Non-Veg\n");
+                printf("3. Exit\n");
+                printf("Please select your choice: ");
+                scanf(" %c", &ch1);
 
-            case '2':
-                printf("Ordered: Chicken Murg Musallam (Rs.450)\n");
-                break;
+                switch (ch1)
+                {
+                case '1':
+                    printf("\nVeg Main Course\n");
+                    printf("1. Paneer Butter Masala    -Rs.250\n");
+                    printf("2. Veg Mix                 -Rs.230\n");
+                    printf("3. Dal Fry & Rice          -Rs.200\n");
 
-            case '3':
-                printf("Ordered: Paneer Tadka (Rs.400)\n");
-                break;
+                    printf("Please select what you want: ");
+                    scanf(" %c", &ch2);
 
-            case '4':
-                printf("Ordered: Veg Mix (Rs.500)\n");
-                break;
+                    switch (ch2)
+                    {
+                    case '1':
+                        printf("Ordered: Paneer Butter Masala (Rs.250)\n");
+                        bill += 250;
+                        break;
 
-            case '5':
-                printf("Returning to Main Menu...\n");
-                break;
+                    case '2':
+                        printf("Ordered: Veg Mix (Rs.230)\n");
+                        bill += 230;
+                        break;
 
-            default:
-                printf("Invalid Choice!\n");
-            }
+                    case '3':
+                        printf("Ordered: Dal Fry & Rice (Rs.200)\n");
+                        bill += 200;
+                        break;
+
+                    default:
+                        printf("Invalid Choice\n");
+                    }
+                    break;
+
+                case '2':
+                    printf("\nNon-Veg Main Course\n");
+                    printf("1. Butter Chicken     -Rs.250\n");
+                    printf("2. Chicken Kadhai     -Rs.230\n");
+                    printf("3. Chicken Biryani    -Rs.210\n");
+
+                    printf("Please select what you want: ");
+                    scanf(" %c", &ch2);
+
+                    switch (ch2)
+                    {
+                    case '1':
+                        printf("Ordered: Butter Chicken (Rs.250)\n");
+                        bill += 250;
+                        break;
+
+                    case '2':
+                        printf("Ordered: Chicken Kadhai (Rs.230)\n");
+                        bill += 230;
+                        break;
+
+                    case '3':
+                        printf("Ordered: Chicken Biryani (Rs.210)\n");
+                        bill += 210;
+                        break;
+
+                    default:
+                        printf("Invalid Choice\n");
+                    }
+                    break;
+
+                case '3':
+                    printf("Exit from Main Course Menu\n");
+                    break;
+
+                default:
+                    printf("Invalid Choice\n");
+                }
+
+            } while (ch1 != '3');
             break;
 
         case '3':
             printf("\n--- Dessert Menu ---\n");
             printf("1. Ice Cream     - Rs.150\n");
             printf("2. Faluda        - Rs.250\n");
-            printf("3. Pastry Cake   - Rs.300\n");
+            printf("3. Pastry Cake   - Rs.210\n");
             printf("4. Exit\n");
 
             printf("Enter your choice: ");
-            scanf(" %c", &ch);
+            scanf(" %c", &ch2);
 
-            switch (ch)
+            switch (ch2)
             {
             case '1':
                 printf("Ordered: Ice Cream (Rs.150)\n");
+                bill += 150;
                 break;
 
             case '2':
                 printf("Ordered: Faluda (Rs.250)\n");
+                bill += 250;
                 break;
 
             case '3':
-                printf("Ordered: Pastry Cake (Rs.300)\n");
+                printf("Ordered: Pastry Cake (Rs.210)\n");
+                bill += 210;
                 break;
 
             case '4':
@@ -132,6 +238,8 @@ int main()
         }
 
     } while (op != '4');
+
+    printf("Total Bill = %ld\n", bill);
 
     return 0;
 }
